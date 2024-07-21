@@ -2,9 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import {
-  MdNotifications,
-  MdOutlineChat,
-  MdPublic,
+  
   MdSearch,
 } from "react-icons/md";
 
@@ -12,9 +10,9 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <div className="p-5 bg-gray-800 flex items-center justify-between">
+    <div className="p-5  flex items-center justify-between">
       <div className="flex items-center gap-4"> 
-        <div className="text-white font-bold">Dashboard</div>
+        <div className="text-gray-900 font-bold">Dashboard</div>
         <div className="text-gray-400 font-bold capitalize">
           {pathname.split("/").pop()}
         </div>

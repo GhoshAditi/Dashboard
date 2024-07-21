@@ -2,13 +2,11 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-// Define the data type
 interface SalesData {
   date: string;
   sales: number;
 }
 
-// Example data for the last 7 days
 const data: SalesData[] = [
   { date: '2024-07-15', sales: 120 },
   { date: '2024-07-16', sales: 98 },
