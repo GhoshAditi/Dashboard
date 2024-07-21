@@ -8,6 +8,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        'custom-text': '#050e03',
+        'custom-background': '#fbfefa',
+        'primary': '#61d531',
+        'secondary': '#87e6c3',
+        'accent': '#61dedc',
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -15,6 +22,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins:[],
 };
 export default config;
