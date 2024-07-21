@@ -30,11 +30,6 @@ const OrderCardCarousel: React.FC = () => {
     };
   
     const cards = [
-      {
-        imageUrl: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
-        title: "Shoes!",
-        description: "If a dog chews shoes whose shoes does he choose?",
-      },
       
       {
         imageUrl: "/images/watch.webp",
