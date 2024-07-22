@@ -10,25 +10,11 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <div className="p-5  flex items-center justify-between">
-      <div className="flex items-center gap-4"> 
-        <div className="text-gray-900 font-bold">Dashboard</div>
-        <div className="text-gray-400 font-bold capitalize">
-          {pathname.split("/").pop()}
-        </div>
-      </div>
-      <div className="flex items-center gap-5">
-        <div className="flex items-center gap-2 bg-gray-700 p-2 rounded-lg">
-          <MdSearch className="text-white"/>
-          <input
-            type="text"
-            placeholder="Search..."
-            className="bg-transparent border-none text-white"
-          />
-        </div>
+      
+        <div className="block text-center text-4xl font-bold mb-4 mt-5">Dashboard</div>
         
-      </div>
-    </div>
+      
+    
   );
 };
 
