@@ -1,26 +1,23 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { FiMenu, FiArrowRight } from "react-icons/fi";
-import  Link  from 'next/link';
-import { useAuth } from "@clerk/nextjs";
-
-import DarkMode from "./mode";
+import Link from "next/link";
 
 const FlipNavWrapper = () => {
   return (
-    <div className="bg-gray-50">
+    
       <FlipNav />
       
-    </div>
+    
   );
 };
 
 const FlipNav = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className="bg-white p-4 border-b-[1px] border-gray-200 flex items-center justify-between relative">
+    <nav className="relative flex items-center justify-between p-4 bg-white shadow-md">
       <NavLeft setIsOpen={setIsOpen} />
       <NavRight />
       <NavMenu isOpen={isOpen} />
@@ -93,60 +90,30 @@ const NavLink = ({ text }: { text: string }) => {
 };
 
 const NavRight = () => {
-  const { isSignedIn, signOut } = useAuth();
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {  
-    setIsClient(true);
-  }, []);
-
   return (
-    <div className="flex items-center gap-4 lg:pr-16">
-      {isClient && (isSignedIn ? (
-        <>
-          
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-4 py-2 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-medium rounded-md whitespace-nowrap"
-            >
-              Profile
-            </motion.button>
-          
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => signOut()}
-            className="px-4 py-2 bg-gradient-to-r from-primary to-secondary text-white font-medium rounded-md whitespace-nowrap"
-          >
-            Logout
-          </motion.button>
-        </>
-      ) : (
-        <>
-          <Link href="/sign-in" passHref>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-4 py-2 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-medium rounded-md whitespace-nowrap"
-            >
-              Sign in
-            </motion.button>
-          </Link>
-          <Link href="/sign-up" passHref>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-4 py-2 bg-gradient-to-r from-primary to-secondary text-white font-medium rounded-md whitespace-nowrap"
-            >
-              Sign up
-            </motion.button>
-          </Link>
-        </>
-      ))}
+    <div className="flex items-center gap-4">
+      <Link href="/sign-in" passHref>
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="px-4 py-2 bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-medium rounded-md whitespace-nowrap"
+      >
+        Sign in
+      </motion.button>
+      </Link>
+      <Link href="\sign-up">
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="px-4 py-2 bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-medium rounded-md whitespace-nowrap"
+      >
+        Sign up
+      </motion.button>
+      </Link>
     </div>
   );
 };
+
 const NavMenu = ({ isOpen }: { isOpen: boolean }) => {
   return (
     <motion.div
@@ -155,10 +122,10 @@ const NavMenu = ({ isOpen }: { isOpen: boolean }) => {
       animate={isOpen ? "open" : "closed"}
       className="absolute p-4 bg-white shadow-lg left-0 right-0 top-full origin-top flex flex-col gap-4"
     >
-      <MenuLink text="Home" />
-      <MenuLink text="About Us" />
-      <MenuLink text="Products" />
-      <MenuLink text="Contact Us" />
+      <MenuLink text="Solutions" />
+      <MenuLink text="Community" />
+      <MenuLink text="Pricing" />
+      <MenuLink text="Company" />
     </motion.div>
   );
 };

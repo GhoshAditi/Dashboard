@@ -3,7 +3,6 @@
 import Image from "next/image";
 import NavBar from "@/components/dashboard/dashboardNav";
 import DashBoard from "@/components/dashboard/parentDash";
-import ShuffleSortTable from "@/components/dashboard/topProducts";
 import OrderCard from "@/components/dashboard/orders";
 import Charts from "@/components/dashboard/charts";
 
