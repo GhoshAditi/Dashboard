@@ -26,7 +26,6 @@ const FlipNav = () => {
 };
 
 const Logo = () => {
-  // Temp logo from https://logoipsum.com/
   return (
     <svg
       width="50"
